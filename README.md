@@ -22,6 +22,16 @@
 - has_many :group_users
 - has_many :messages
 
+## group_usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|group |references|index:true,foreign_key:true,null:false|
+| user |references|index:true,foreign_key:true,null:false|
+
+### Association
+- belongs_to :user
+- belongs_to :group
 
 ## messageテーブル
 |Column|Type|Options|
@@ -36,13 +46,4 @@
 - belongs_to :group
 
 
-## group_usersテーブル
 
-|Column|Type|Options|
-|------|----|-------|
-|group |references|index:true,foreign_key:true,null:false|
-| user |references|index:true,foreign_key:true,null:false|
-
-### Association
-- belongs_to :user
-- belongs_to :group
